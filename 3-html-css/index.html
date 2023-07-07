@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .songs-wrapper {
+            width: 100%;
+        }
+
+        .container {
+            /* border: 1px solid black; */
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .all-songs::after {
+            content: " ";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+
+        .box {
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .box p {
+            padding: 20px;
+        }
+
+        .orange {
+            background-color: #FF6900;
+        }
+
+        .green {
+            background-color: #85B72B;
+        }
+
+        .blue {
+            background-color: #77BFEA;
+        }
+
+        .favorite {
+            background-color: #F0EDEE;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="songs-wrapper">
+        <div class="container">
+            <div class="all-songs">
+                <h1>All Songs</h1>
+                <div class="box orange">
+                    <p>Song 1</p>
+                </div>
+                <div class="box green">
+                    <p>Song 2</p>
+                </div>
+                <div class="box blue">
+                    <p>Song 3</p>
+                </div>
+            </div>
+
+            <div class="most-played">
+                <h1>Most Played Songs</h1>
+                <div class="box favorite">
+                    <p>Song 1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
