@@ -1,0 +1,15 @@
+{
+  "name": "4-fe-and-be",
+  "version": "1.0.0",
+  "description": "Integrate Front-End and Back-End with API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
