@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
+
 const { v4: uuid } = require("uuid");
 
 
@@ -23,7 +25,7 @@ app.post('/playlists', express.json(), async (req, res) => {
         name: name,
     }
 
-    res.status(201).send({message: "Created new playlist!", data: newPlaylist});
+    res.status(201).send({message: "Playlist added successfuly!", data: newPlaylist});
 });
 
 
