@@ -23,13 +23,15 @@ app.get('/playlists', (req, res) => {
 })
 
 app.post('/playlists', express.json(), async (req, res) => {
-    const playlistData = req.body;
+    // const playlistData = req.body;
 
-    if (playlistData.name == null) return res.status(401).send({error: true, message: "Playlist data missing"});
+    // if (playlistData.name == null) return res.status(401).send({error: true, message: "Playlist data missing"});
     
+    const playlistLength = getPlaylists().playlists.length;
+
     const newPlaylist = {
         id: uuid(),
-        name: playlistData.name,
+        name: "My Playlist #"+(playlistLength+1),
     }
 
     const existPlaylists = getPlaylists();
