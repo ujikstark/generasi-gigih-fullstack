@@ -2,7 +2,7 @@
     "playlists": [
         {
             "id": "33ab802d-616c-4121-a521-60fbb1c3aece",
-            "name": "My playlist",
+            "name": "My Playlist #1",
             "songs": [
                 {
                     "id": "2",
@@ -22,79 +22,19 @@
         },
         {
             "id": "1bc606f6-5b4e-4349-a979-5bfa8202129c",
-            "name": "My playlist"
+            "name": "My Playlist #2"
         },
         {
-            "id": "9e793336-57d2-4c25-bad1-9ad3aef6bafa",
-            "name": "My playlist"
+            "id": "a1fa1c74-89e5-4fec-8b8d-e33d8d5dfcad",
+            "name": "My Playlist #3"
         },
         {
-            "id": "1",
-            "name": "Lagu lagu santai",
-            "songs": [
-                {
-                    "id": "1",
-                    "title": "Monokrom",
-                    "artist": "Tulus",
-                    "music": "music/monokrom-tulus.mp3",
-                    "img": "img/tulus-monokrom.jpeg"
-                },
-                {
-                    "id": "2",
-                    "title": "Sial",
-                    "artist": "Mahalini",
-                    "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg"
-                },
-                {
-                    "id": "2",
-                    "title": "Sial",
-                    "artist": "Mahalini",
-                    "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg"
-                },
-                {
-                    "id": "2",
-                    "title": "Sial",
-                    "artist": "Mahalini",
-                    "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg"
-                },
-                {
-                    "id": "3",
-                    "title": "Sial",
-                    "artist": "Mahalini",
-                    "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg"
-                },
-                {
-                    "id": "4",
-                    "title": "Sial",
-                    "artist": "Mahalini",
-                    "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg"
-                }
-            ]
+            "id": "67980786-282c-4713-a57d-88e680273530",
+            "name": "My Playlist #4"
         },
         {
-            "id": "aaedfbc1-87cf-4cee-8dc5-677dc03a927c",
-            "name": "My Playlist"
-        },
-        {
-            "id": "b9c777b8-0adb-455e-9e00-c2b2d876d8c6",
-            "name": "My Playlist"
-        },
-        {
-            "id": "a46f43da-6224-47b0-9c72-19fef2d60393",
-            "name": "My Playlist"
-        },
-        {
-            "id": "11f8d852-9f9c-4b72-bc11-59aba2ad7cc5",
-            "name": "My Playlist #71"
-        },
-        {
-            "id": "ca05dd98-4f36-4ff7-b376-2e92df2eb06a",
-            "name": "My Playlist #9"
+            "id": "4c4e60bd-6016-427a-9dd8-a0fd896306dc",
+            "name": "My Playlist #5"
         }
     ]
 }

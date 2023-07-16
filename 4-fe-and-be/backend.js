@@ -13,8 +13,27 @@ app.get('/songs', (req, res) => {
 
     const songs = getSongs();
 
-    res.status(200).send({data: songs});
-})
+    res.status(200).send({message:"Sucsess", data: songs});
+});
+
+app.get('/songs/:id', (req, res) => {
+
+    const id = req.params.id;
+
+    const songs = getSongs().songs;
+
+
+    const songExist = songs.find(song => song.id === id);
+
+    if (!songExist) {
+        return res.status(404).send({message: "Song not found"});
+    }
+
+    return res.status(200).send({message: "Success", data: songExist});
+
+});
+
+
 
 app.get('/playlists', (req, res) => {
     const playlists = getPlaylists();
