@@ -16,6 +16,12 @@ app.get('/songs', (req, res) => {
     res.status(200).send({data: songs});
 })
 
+app.get('/playlists', (req, res) => {
+    const playlists = getPlaylists();
+    
+    res.status(200).send({data: playlists});
+})
+
 app.post('/playlists', express.json(), async (req, res) => {
     const playlistData = req.body;
 
