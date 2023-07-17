@@ -109,6 +109,38 @@ app.patch('/playlists/:id', express.json(), (req, res) => {
 
 });
 
+// update played count endpoint
+app.get('/songs/play/:id', express.json(), (req, res) => {
+    const id = req.params.id;
+
+    // const songData = { "id": "2", "title": "Sial", "artist": "Mahalini", "music": "music/sial-mahalini.mp3", "img": "img/sial-mahalini.jpeg" };
+
+    const existSongs = getSongs().songs;
+
+    var songIdx = -1;
+    for (let i = 0; i < existSongs.length; i++) {
+        if (existSongs[i].id == id) {
+            songIdx = i;
+            break;
+        }
+    }
+
+    // const findExist = existPlaylists.find(playlist => playlist.id === id);
+    if (songIdx == -1) {
+        return res.status(409).send({message: `song id ${id} not exist`});
+    }
+
+    const findExist = existSongs[songIdx];
+
+    findExist.played_count += 1;
+
+    existSongs[songIdx] = findExist;
+
+    saveSongs({songs: existSongs});
+
+    res.send({message: "Updated song successfuly", data: findExist});
+
+});
 
 
 const getSongs = () => {
@@ -124,6 +156,11 @@ const getPlaylists = () => {
 const savePlaylists = (data) => {
     const stringifyData = JSON.stringify(data, null, 4);
     fs.writeFileSync('dummy_data/playlists.json', stringifyData);
+}
+
+const saveSongs = (data) => {
+    const stringifyData = JSON.stringify(data, null, 4);
+    fs.writeFileSync('dummy_data/songs.json', stringifyData);    
 }
 
 

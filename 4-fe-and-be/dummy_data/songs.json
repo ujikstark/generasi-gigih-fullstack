@@ -1,6 +1,20 @@
 {
-  "songs": [
-    { "id": "1", "title": "Monokrom", "artist": "Tulus", "music": "music/monokrom-tulus.mp3", "img": "img/tulus-monokrom.jpeg", "played_count": 1},
-    { "id": "2", "title": "Sial", "artist": "Mahalini", "music": "music/sial-mahalini.mp3", "img": "img/sial-mahalini.jpeg" , "played_count": 12}
-  ]
+    "songs": [
+        {
+            "id": "1",
+            "title": "Monokrom",
+            "artist": "Tulus",
+            "music": "music/monokrom-tulus.mp3",
+            "img": "img/tulus-monokrom.jpeg",
+            "played_count": 3
+        },
+        {
+            "id": "2",
+            "title": "Sial",
+            "artist": "Mahalini",
+            "music": "music/sial-mahalini.mp3",
+            "img": "img/sial-mahalini.jpeg",
+            "played_count": 15
+        }
+    ]
 }

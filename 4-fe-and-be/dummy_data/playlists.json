@@ -22,7 +22,17 @@
         },
         {
             "id": "1bc606f6-5b4e-4349-a979-5bfa8202129c",
-            "name": "My Playlist #2"
+            "name": "My Playlist #2",
+            "songs": [
+                {
+                    "id": "1",
+                    "title": "Monokrom",
+                    "artist": "Tulus",
+                    "music": "music/monokrom-tulus.mp3",
+                    "img": "img/tulus-monokrom.jpeg",
+                    "played_count": 1
+                }
+            ]
         },
         {
             "id": "a1fa1c74-89e5-4fec-8b8d-e33d8d5dfcad",
@@ -30,11 +40,25 @@
         },
         {
             "id": "67980786-282c-4713-a57d-88e680273530",
-            "name": "My Playlist #4"
+            "name": "My Playlist #4",
+            "songs": [
+                {
+                    "id": "1",
+                    "title": "Monokrom",
+                    "artist": "Tulus",
+                    "music": "music/monokrom-tulus.mp3",
+                    "img": "img/tulus-monokrom.jpeg",
+                    "played_count": 1
+                }
+            ]
         },
         {
             "id": "4c4e60bd-6016-427a-9dd8-a0fd896306dc",
             "name": "My Playlist #5"
+        },
+        {
+            "id": "dc9477ed-b72e-4aae-9a9e-5327475617c1",
+            "name": "My Playlist #6"
         }
     ]
 }
