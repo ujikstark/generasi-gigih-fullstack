@@ -6,7 +6,7 @@
             "artist": "Tulus",
             "music": "music/monokrom-tulus.mp3",
             "img": "img/tulus-monokrom.jpeg",
-            "played_count": 6
+            "played_count": 13
         },
         {
             "id": "2",
@@ -14,7 +14,7 @@
             "artist": "Mahalini",
             "music": "music/sial-mahalini.mp3",
             "img": "img/sial-mahalini.jpeg",
-            "played_count": 16
+            "played_count": 21
         }
     ]
 }

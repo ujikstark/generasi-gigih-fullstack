@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  }
+
+  ul {
+    list-style: none;
+  
+  }
+
+
+  a {
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  .container {
+    margin: 0 auto;
+  }
+
+  
+
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 450px;
+    top: 0;
+    left: 0;
+  }
+
+  .content-wrapper {
+    display: flex;
+    /* justify-content: space-between; */
+    background-color: #191414;
+  }
+
+  .content {
+    width: 100%;
+    height: 100vh;
+    margin-left: 470px;
+    margin-top: 10px;
+    background-color: #1c1c1c;
+    color: white;
+    padding: 10px;
+  }
+
+  .content h1 {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .songs, .most-played-songs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .content .card {
+    background-color: #212020;
+    padding: 20px;
+    margin: 20px 10px 10px 20px;
+  }
+
+  
+
+  .content .song-image {
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .content .song-title {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .content .song-artist {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .bottombar {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background-color: #191414;
+    bottom: 0;
+    padding: 10px 20px;
+  } 
+
+  .bottombar .card {
+    display: flex;
+    color: white;
+    /* width: 100px; */
+  }
+
+  .bottombar .song-image {
+    height: 50px;
+    width: 50px;
+  }
+
+  .bottombar .right {
+    margin-left: 14px;
+  }
+
+  .bottombar .song-title {
+    font-size: 14px;
+  }
+
+  .bottombar .song-artist {
+    font-size: 12px;
+  }
+
+  .box {
+    width: 200px;
+  }
+
+  .song-playing {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .song-icon {
+    position: relative;
+  }
+
+
+  .play-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #1DB954; 
+    visibility: hidden;
+    transition: visibility 1s, opacity 0.5s linear;
+    opacity: 0;
+    text-align: center;
+  }
+
+  .play-button i {
+    font-size: 26px;
+    line-height: 50px;
+    color: black;
+  }
+  
+
+  .card:hover {
+    background-color: #4b4a4a;
+    cursor: pointer;
+  }
+
+  .card:hover .play-button {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  .sidebar {
+    color: white;
+  }
+  
+  .sidebar .card-1 {
+    background-color: #1c1c1c;
+    height: 18vh;
+  }
+
+  .card-1 div {
+    padding: 20px;
+  }
+
+  .card-1 span {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+
+  .sidebar .card-2 {
+    background-color: #1c1c1c;
+    margin-top: 10px;
+    height: 72vh;
+  }
+
+
+  .sidebar i {
+    font-size: 26px;
+  }
+
+  .card-2 {
+    padding: 20px;
+  }
+
+  .card-2 h3 {
+    margin: 20px 0;
+  }
+
+  .card-2 p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .card-playlist {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  .card-playlist img {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+  }
+/* 
+  .card-playlist div {
+    flex-grow: 8;
+  } */
+
+
+  .add-playlist {
+    width: 160px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #1DB954;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .add-playlist:hover {
+    background-color: #32784c;
+  }
+
+  .add-playlist:active {
+    background-color: #1DB954;
+  }
+
+  .play-button:active {
+    background-color: white;
+  }
+
+  #contextMenu {
+    display: none;
+    position: absolute;
+    background-color: #171515;
+    padding: 10px;
+    z-index: 10;
+    box-shadow: 0 0 5px 2px #fff;
+  }
+
+  .heading-context {
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+  }
+
+
+  #contextMenu a {
+    padding: 16px;
+    cursor: pointer;
+  }
+
+  #contextMenu a:hover {
+    background-color: grey;;
+  }
+
+  
+
+  body {
+    height: 5000px;
+    background-color: #191414;
+  }
+  
