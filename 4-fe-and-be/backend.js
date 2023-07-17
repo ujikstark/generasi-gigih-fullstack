@@ -13,7 +13,7 @@ app.get('/songs', (req, res) => {
 
     const songs = getSongs();
 
-    res.status(200).send({message:"Sucsess", data: songs});
+    res.status(200).send({message:"Success", data: songs});
 });
 
 app.get('/songs/:id', (req, res) => {
@@ -33,6 +33,48 @@ app.get('/songs/:id', (req, res) => {
 
 });
 
+// update played count endpoint
+app.get('/songs/play/:id', express.json(), (req, res) => {
+    const id = req.params.id;
+
+    // const songData = { "id": "2", "title": "Sial", "artist": "Mahalini", "music": "music/sial-mahalini.mp3", "img": "img/sial-mahalini.jpeg" };
+
+    const existSongs = getSongs().songs;
+
+    var songIdx = -1;
+    for (let i = 0; i < existSongs.length; i++) {
+        if (existSongs[i].id == id) {
+            songIdx = i;
+            break;
+        }
+    }
+
+    // const findExist = existPlaylists.find(playlist => playlist.id === id);
+    if (songIdx == -1) {
+        return res.status(409).send({message: `song id ${id} not exist`});
+    }
+
+    const findExist = existSongs[songIdx];
+
+    findExist.played_count += 1;
+
+    existSongs[songIdx] = findExist;
+
+    saveSongs({songs: existSongs});
+
+    res.send({message: "Updated song successfuly", data: findExist});
+
+});
+
+// api return sorted songs by most played
+app.get('/songs/sorted/most-played', (req, res) => {
+
+    const songs = getSongs().songs.sort((function (a, b) {
+        return b.played_count - a.played_count; 
+    }));
+
+    res.status(200).send({message:"Success", data: songs});
+});
 
 
 app.get('/playlists', (req, res) => {
@@ -109,38 +151,7 @@ app.patch('/playlists/:id', express.json(), (req, res) => {
 
 });
 
-// update played count endpoint
-app.get('/songs/play/:id', express.json(), (req, res) => {
-    const id = req.params.id;
 
-    // const songData = { "id": "2", "title": "Sial", "artist": "Mahalini", "music": "music/sial-mahalini.mp3", "img": "img/sial-mahalini.jpeg" };
-
-    const existSongs = getSongs().songs;
-
-    var songIdx = -1;
-    for (let i = 0; i < existSongs.length; i++) {
-        if (existSongs[i].id == id) {
-            songIdx = i;
-            break;
-        }
-    }
-
-    // const findExist = existPlaylists.find(playlist => playlist.id === id);
-    if (songIdx == -1) {
-        return res.status(409).send({message: `song id ${id} not exist`});
-    }
-
-    const findExist = existSongs[songIdx];
-
-    findExist.played_count += 1;
-
-    existSongs[songIdx] = findExist;
-
-    saveSongs({songs: existSongs});
-
-    res.send({message: "Updated song successfuly", data: findExist});
-
-});
 
 
 const getSongs = () => {
