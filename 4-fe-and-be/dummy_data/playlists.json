@@ -9,14 +9,16 @@
                     "title": "Sial",
                     "artist": "Mahalini",
                     "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg"
+                    "img": "img/sial-mahalini.jpeg",
+                    "played_count": 3
                 },
                 {
                     "id": "2",
                     "title": "Sial",
                     "artist": "Mahalini",
                     "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg"
+                    "img": "img/sial-mahalini.jpeg",
+                    "played_count": 0
                 }
             ]
         },
