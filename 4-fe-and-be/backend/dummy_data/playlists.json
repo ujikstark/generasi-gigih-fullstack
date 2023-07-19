@@ -1,42 +1,45 @@
 {
-    "playlists": [
+  "playlists": [
+    {
+      "id": "33ab802d-616c-4121-a521-60fbb1c3aece",
+      "songs": [
         {
-            "id": "33ab802d-616c-4121-a521-60fbb1c3aece",
-            "name": "My Playlist #1",
-            "songs": [
-                {
-                    "id": "60e623f2-7d19-4b18-89bf-a4bdd6cc8432"
-                },
-                {
-                    "id": "55b16be6-a347-4ad9-8c12-6bd3ae718f60"
-                    
-                }
-            ]
+          "id": "60e623f2-7d19-4b18-89bf-a4bdd6cc8432"
         },
         {
-            "id": "1bc606f6-5b4e-4349-a979-5bfa8202129c",
-            "name": "My Playlist #2",
-            "songs": [
-                {
-                    "id": "55b16be6-a347-4ad9-8c12-6bd3ae718f60"
-                    
-                }
-            ]
-        },
-        {
-            "id": "a1fa1c74-89e5-4fec-8b8d-e33d8d5dfcad",
-            "name": "My Playlist #3",
-            "songs": []
-        },
-        {
-            "id": "4c4e60bd-6016-427a-9dd8-a0fd896306dc",
-            "name": "My Playlist #5",
-            "songs": []
-        },
-        {
-            "id": "dc9477ed-b72e-4aae-9a9e-5327475617c1",
-            "name": "My Playlist #6",
-            "songs": []
+          "id": "55b16be6-a347-4ad9-8c12-6bd3ae718f60"
         }
-    ]
+      ],
+      "name": "My Playlist #1"
+    },
+    {
+      "id": "1bc606f6-5b4e-4349-a979-5bfa8202129c",
+      "songs": [
+        {
+          "id": "55b16be6-a347-4ad9-8c12-6bd3ae718f60"
+        }
+      ],
+      "name": "My Playlist #2"
+    },
+    {
+      "id": "a1fa1c74-89e5-4fec-8b8d-e33d8d5dfcad",
+      "songs": [],
+      "name": "My Playlist #3"
+    },
+    {
+      "id": "4c4e60bd-6016-427a-9dd8-a0fd896306dc",
+      "songs": [],
+      "name": "My Playlist #5"
+    },
+    {
+      "id": "dc9477ed-b72e-4aae-9a9e-5327475617c1",
+      "songs": [],
+      "name": "My Playlist #6"
+    },
+    {
+      "id": "fd42951c-d5bd-4e10-8ea6-d32ef2d451d6",
+      "songs": [],
+      "name": "dari postman"
+    }
+  ]
 }

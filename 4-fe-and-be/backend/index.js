@@ -20,6 +20,7 @@ app.get('/songs/sorted/most-played', songController.sortedSongs);
 
 // playlist api 
 app.get('/playlists', playlistController.getPlaylists);
+app.post('/playlists', playlistController.createPlaylist);
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
