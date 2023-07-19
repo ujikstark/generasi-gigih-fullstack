@@ -85,7 +85,7 @@ class SongModel {
       });
 
     } catch (error) {
-      console.error('Error loading data:', error);
+      throw new Error("Error loading data", error);
     }
   }
 
@@ -94,8 +94,8 @@ class SongModel {
     try {
       fs.writeFileSync(dataPath, JSON.stringify({ songs: this.songs }, null, 2));
     } catch (error) {
-      console.error('Error saving data:', error);
-    }
+      throw new Error("Error Saving data", error);
+  }
   }
 
   // retrieve all songs
@@ -130,6 +130,8 @@ class SongModel {
   getSongById(id) {
     const song = this.songs.find(song => song.id === id);
 
+    if (!song) throw new Error(`Song id ${id} not found`);
+
     return song;
   }
 
@@ -138,12 +140,14 @@ class SongModel {
       return song.id === id;
     });
 
+    if (songIndex == -1) throw new Error(`Song id ${id} not found`);
+
+
     return songIndex;
   }
 
   updateSong(id, newSong) {
     const songIndex = this.getSongIndex(id);
-    if (songIndex == -1) throw new Error('Invalid id');
 
     this.songs[songIndex] = newSong;
     this.saveData();
