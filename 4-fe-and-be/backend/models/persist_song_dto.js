@@ -7,13 +7,28 @@ class PersistSongDTO {
         this.playedCount = data.playedCount;
     }
 
-    validate() {
+    validateTitle() {
         if (this.title == null || this.title == "") return false;
-        if (this.artist == null || this.artist == "") return false;
-        if (this.imageUrl == null || this.imageUrl == "") return false;
-        if (this.songUrl == null || this.songUrl == "") return false;
-        if (this.playedCount == null) return false;
+        return true;
+    }
 
+    validateArtist() {
+        if (this.artist == null || this.artist == "") return false;
+        return true;
+    }
+
+    validateImageUrl() {
+        if (this.imageUrl == null || this.imageUrl == "") return false;
+        return true;
+    }
+
+    validateSongUrl() {
+        if (this.songUrl == null || this.songUrl == "") return false;
+        return true;
+    }
+
+    validatePlayedCount() {
+        if (this.playedCount == null || Number.isInteger(this.playedCount) == false) return false;
         return true;
     }
 
@@ -50,11 +65,11 @@ class PersistSongDTO {
     }
 
     getPlayedCount() {
-        return this.played_count;
+        return this.playedCount;
     }
 
     setPlayedCount(playedCount) {
-        this.played_count = playedCount;
+        this.playedCount = playedCount;
     }
 }
 

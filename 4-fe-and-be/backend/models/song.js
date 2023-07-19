@@ -15,8 +15,8 @@ class Song {
     return this.id;
   }
 
-  setId() {
-    return this.id;
+  setId(id) {
+    this.id = id;
   }
 
   getTitle() {
@@ -63,14 +63,26 @@ class Song {
 
 class SongModel {
   constructor() {
-    this.data = [];
+    this.songs = [];
     this.loadData();
   }
 
   loadData() {
     try {
       const jsonData = fs.readFileSync(dataPath);
-      this.data = JSON.parse(jsonData);
+      const songData = JSON.parse(jsonData);
+
+      this.songs = songData.songs.map(song => {
+        const currentSong = new Song();
+        currentSong.setId(song.id);
+        currentSong.setTitle(song.title);
+        currentSong.setArtist(song.artist);
+        currentSong.setSongUrl(song.songUrl);
+        currentSong.setImageUrl(song.imageUrl);
+        currentSong.setPlayedCount(song.playedCount);
+        return currentSong;
+      });
+
     } catch (error) {
       console.error('Error loading data:', error);
     }
@@ -78,14 +90,14 @@ class SongModel {
 
   saveData() {
     try {
-      fs.writeFileSync(dataPath, JSON.stringify(this.data, null, 2));
+      fs.writeFileSync(dataPath, JSON.stringify({songs: this.songs}, null, 2));
     } catch (error) {
       console.error('Error saving data:', error);
     }
   }
 
   getSongs() {
-    return this.data.songs;
+    return this.songs;
   }
 
   createSong(newSong) {
@@ -96,35 +108,33 @@ class SongModel {
     song.setImageUrl(newSong.imageUrl);
     song.setPlayedCount(newSong.playedCount);
     // console.log(this.data);
-    this.data.songs.push(song);
+    this.songs.push(song);
     this.saveData();
     return song;
   }
 
   getSongById(id) {
-    const song = this.data.songs.find(song => song.id === id);
+    const song = this.songs.find(song => song.id === id);
 
     return song;
   }
 
   getSongIndex(id) {
-    const songIndex = this.data.songs.findIndex((song) => {
+    const songIndex = this.songs.findIndex((song) => {
       return song.id === id;
     });
 
     return songIndex;
   }
 
+  updateSong(id, newSong) {
+    const songIndex = this.getSongIndex(id);
+    if (songIndex == -1) throw new Error('Invalid id');
 
-  updateSong(index, title, author) {
-    if (index >= 0 && index < this.data.length) {
-      const book = this.data[index];
-      book.setTitle(title);
-      book.setAuthor(author);
-      this.saveData();
-      return book;
-    }
-    throw new Error('Invalid index');
+    this.songs[songIndex] = newSong;
+    this.saveData();
+
+    return newSong;
   }
 }
 

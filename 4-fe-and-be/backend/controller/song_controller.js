@@ -33,3 +33,28 @@ exports.getSongById = (req, res) => {
   return res.status(200).send({ message: "Success", data: song });
 
 }
+
+exports.updateSong = (req, res) => {
+  const id = req.params.id;
+
+
+  // request data
+  const persistSongDTO = new PersistSongDTO(req.body);
+
+  // exist data
+  const song = songService.getSongById(id);
+
+  if (!song) {
+    return res.status(404).send({ message: "Song not found" });
+  }
+  
+  // updated data
+  const updatedSong = songService.updateSong(id, song, persistSongDTO);  
+  
+  if (!updatedSong) {
+    return res.status(404).send({ message: "Update fail" });
+  }
+
+  return res.status(200).send({ message: "Updated song!", data: updatedSong });
+
+}
