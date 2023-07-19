@@ -1,0 +1,28 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "title": "Monokrom",
+      "artist": "Tulus",
+      "songUrl": "music/monokrom-tulus.mp3",
+      "imageUrl": "img/tulus-monokrom.jpeg",
+      "played_count": 13
+    },
+    {
+      "id": "2",
+      "title": "Sial",
+      "artist": "Mahalini",
+      "songUrl": "music/sial-mahalini.mp3",
+      "imageUrl": "img/sial-mahalini.jpeg",
+      "played_count": 21
+    },
+    {
+      "id": "e26a1a7e-68d3-470e-8905-e6a55c2b5816",
+      "played_count": 21,
+      "title": "Sial banget",
+      "artist": "Mahalini",
+      "songUrl": "music/sial-mahalini.mp3",
+      "imageUrl": "img/sial-mahalini.jpeg"
+    }
+  ]
+}
