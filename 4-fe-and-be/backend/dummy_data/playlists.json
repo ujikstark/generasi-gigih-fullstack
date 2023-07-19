@@ -5,20 +5,11 @@
             "name": "My Playlist #1",
             "songs": [
                 {
-                    "id": "2",
-                    "title": "Sial",
-                    "artist": "Mahalini",
-                    "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg",
-                    "played_count": 3
+                    "id": "60e623f2-7d19-4b18-89bf-a4bdd6cc8432"
                 },
                 {
-                    "id": "2",
-                    "title": "Sial",
-                    "artist": "Mahalini",
-                    "music": "music/sial-mahalini.mp3",
-                    "img": "img/sial-mahalini.jpeg",
-                    "played_count": 0
+                    "id": "55b16be6-a347-4ad9-8c12-6bd3ae718f60"
+                    
                 }
             ]
         },
@@ -27,40 +18,25 @@
             "name": "My Playlist #2",
             "songs": [
                 {
-                    "id": "1",
-                    "title": "Monokrom",
-                    "artist": "Tulus",
-                    "music": "music/monokrom-tulus.mp3",
-                    "img": "img/tulus-monokrom.jpeg",
-                    "played_count": 1
+                    "id": "55b16be6-a347-4ad9-8c12-6bd3ae718f60"
+                    
                 }
             ]
         },
         {
             "id": "a1fa1c74-89e5-4fec-8b8d-e33d8d5dfcad",
-            "name": "My Playlist #3"
-        },
-        {
-            "id": "67980786-282c-4713-a57d-88e680273530",
-            "name": "My Playlist #4",
-            "songs": [
-                {
-                    "id": "1",
-                    "title": "Monokrom",
-                    "artist": "Tulus",
-                    "music": "music/monokrom-tulus.mp3",
-                    "img": "img/tulus-monokrom.jpeg",
-                    "played_count": 1
-                }
-            ]
+            "name": "My Playlist #3",
+            "songs": []
         },
         {
             "id": "4c4e60bd-6016-427a-9dd8-a0fd896306dc",
-            "name": "My Playlist #5"
+            "name": "My Playlist #5",
+            "songs": []
         },
         {
             "id": "dc9477ed-b72e-4aae-9a9e-5327475617c1",
-            "name": "My Playlist #6"
+            "name": "My Playlist #6",
+            "songs": []
         }
     ]
 }
