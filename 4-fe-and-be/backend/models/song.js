@@ -8,7 +8,7 @@ const dataPath = path.join(__dirname, '../dummy_data/songs.json');
 class Song {
   constructor() {
     this.id = uuid();
-    this.played_count = 0;
+    this.playedCount = 0;
   }
 
   getId() {
@@ -52,11 +52,11 @@ class Song {
   }
 
   getPlayedCount() {
-    return this.played_count;
+    return this.playedCount;
   }
 
   setPlayedCount(playedCount) {
-    this.played_count = playedCount;
+    this.playedCount = playedCount;
   }
 
 }
