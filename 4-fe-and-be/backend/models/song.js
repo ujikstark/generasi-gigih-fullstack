@@ -130,6 +130,8 @@ class SongModel {
   getSongById(id) {
     const song = this.songs.find(song => song.id === id);
 
+    if (!song) throw new Error(`Song with id ${id} not found`);
+
     return song;
   }
 

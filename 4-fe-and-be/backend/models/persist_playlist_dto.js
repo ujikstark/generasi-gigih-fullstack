@@ -7,7 +7,7 @@ class PersistPlaylistDTO {
         if (this.validateName())
             return true;
         else
-            return false;
+            throw new Error("name is invalid");
     }
 
     validateName() {

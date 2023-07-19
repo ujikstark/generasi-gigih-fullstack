@@ -1,4 +1,4 @@
-class AddSongPlaylistDTO {
+class PersistPlaylistSongDTO {
     constructor(data) {
         this.songId = data.songId;
     }
@@ -7,7 +7,7 @@ class AddSongPlaylistDTO {
         if (this.validateSongId())
             return true;
         else
-            return false;
+            throw new Error(`songId ${this.songId} is invalid`)
     }
 
     validateSongId() {
@@ -26,4 +26,4 @@ class AddSongPlaylistDTO {
     
 }
 
-module.exports = AddSongPlaylistDTO;
+module.exports = PersistPlaylistSongDTO;

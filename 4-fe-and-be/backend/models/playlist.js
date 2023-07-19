@@ -59,7 +59,7 @@ class PlaylistModel {
             });
 
         } catch (error) {
-            console.error('Error loading data:', error);
+            throw new Error("Error loading data", error);
         }
     }
 
@@ -68,7 +68,7 @@ class PlaylistModel {
         try {
             fs.writeFileSync(dataPath, JSON.stringify({ playlists: this.playlists }, null, 2));
         } catch (error) {
-            console.error('Error saving data:', error);
+            throw new Error("Error Saving data", error);
         }
     }
 
@@ -90,6 +90,8 @@ class PlaylistModel {
     getPlaylistById(id) {
         const playlist = this.playlists.find(playlist => playlist.id === id);
 
+        if (!playlist) throw new Error(`Playlist ${id} not found`);
+
         return playlist;
     }
 
@@ -98,12 +100,13 @@ class PlaylistModel {
             return playlist.id === id;
         });
 
+        if (playlistIndex == -1) throw new Error(`Playlist ${id} not found`);
+
         return playlistIndex;
     }
 
     updatePlaylist(id, newPlaylist) {
         const playlistIndex = this.getPlaylistIndex(id);
-        if (playlistIndex == -1) throw new Error('Invalid id');
 
         this.playlists[playlistIndex] = newPlaylist;
         this.saveData();
@@ -117,12 +120,30 @@ class PlaylistModel {
 
         // check if song id is exist in playlist
         if (this.playlists[playlistIndex].songs.find(song => song.id === songId)) {
-            throw new Error('song id exist!');
+            throw new Error(`song id ${songId} exist!`);
         }
 
         this.playlists[playlistIndex].songs.push({ id: songId });
         this.saveData();
         return this.playlists[playlistIndex];
+    }
+
+    // delete song in playlist
+    deleteSong(playlistId, songId) {
+        const playlistIndex = this.getPlaylistIndex(playlistId);
+
+        // check if song id is exist in playlist
+        const songIndex = this.playlists[playlistIndex].songs.findIndex((song) => {
+            return song.id === songId;
+        });        
+        
+        if (songIndex == -1) {
+            throw new Error(`Song id ${songId} not found`);
+        }
+
+        const song = this.playlists[playlistIndex].songs.splice(songIndex, 1)[0];
+        this.saveData();
+        return song;
     }
 
 }
