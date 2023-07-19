@@ -72,8 +72,26 @@ class PlaylistModel {
         }
     }
 
-    // retrieve all songs
-    getSongs() {
-        return this.songs;
+    // retrieve all playlists
+    getPlaylists() {
+        return this.playlists;
+    }
+
+    // create a new song
+    createPlaylist(newPlaylist) {
+        const playlist = new Playlist();
+        playlist.setName(newPlaylist.name);
+
+        this.playlists.push(playlist);
+        this.saveData();
+        return playlist;
+    }
+
+    getPlaylistById(id) {
+        const playlist = this.playlists.find(playlist => playlist.id === id);
+
+        return playlist;
     }
 }
+
+module.exports = PlaylistModel;
