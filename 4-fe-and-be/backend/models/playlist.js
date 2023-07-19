@@ -1,0 +1,79 @@
+const fs = require('fs');
+const path = require('path');
+const { v4: uuid } = require("uuid");
+
+
+const dataPath = path.join(__dirname, '../dummy_data/playlists.json');
+
+class Playlist {
+    constructor() {
+        this.id = uuid();
+        this.songs = [];
+    }
+
+    getId() {
+        return this.id;
+    }
+
+    setId(id) {
+        this.id = id;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    setName(name) {
+        this.name = name;
+    }
+
+    getSongs() {
+        return this.songs;
+    }
+
+    setSongs(songs) {
+        this.songs = songs;
+    }
+
+}
+
+class PlaylistModel {
+    constructor() {
+        this.playlists = [];
+        this.loadData();
+    }
+
+    // retrieve data from json and make a list<playlist>
+    loadData() {
+        try {
+            const jsonData = fs.readFileSync(dataPath);
+            const playlistData = JSON.parse(jsonData);
+
+            this.playlists = playlistData.playlists.map(playlist => {
+                const currentPlaylist = new Playlist();
+                currentPlaylist.setId(playlist.id);
+                currentPlaylist.setName(playlist.name);
+                currentPlaylist.setSongs(playlist.songs);
+
+                return currentPlaylist;
+            });
+
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+    }
+
+    // save data to dummy data json
+    saveData() {
+        try {
+            fs.writeFileSync(dataPath, JSON.stringify({ playlists: this.playlists }, null, 2));
+        } catch (error) {
+            console.error('Error saving data:', error);
+        }
+    }
+
+    // retrieve all songs
+    getSongs() {
+        return this.songs;
+    }
+}
