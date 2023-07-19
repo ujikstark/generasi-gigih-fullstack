@@ -10,6 +10,7 @@ app.use(express.json());
 
 
 app.get('/songs', songController.getSongs);
+app.get('/songs/:id', songController.getSongById);
 app.post('/songs', songController.createSong);
 
 

@@ -12,6 +12,10 @@ class SongService {
   createSong(song) {
     return this.songModel.createSong(song);
   }
+
+  getSongById(id) {
+    return this.songModel.getSongById(id);
+  }
 }
 
 module.exports = SongService;

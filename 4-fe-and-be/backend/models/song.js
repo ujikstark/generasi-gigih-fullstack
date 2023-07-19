@@ -101,6 +101,21 @@ class SongModel {
     return song;
   }
 
+  getSongById(id) {
+    const song = this.data.songs.find(song => song.id === id);
+
+    return song;
+  }
+
+  getSongIndex(id) {
+    const songIndex = this.data.songs.findIndex((song) => {
+      return song.id === id;
+    });
+
+    return songIndex;
+  }
+
+
   updateSong(index, title, author) {
     if (index >= 0 && index < this.data.length) {
       const book = this.data[index];

@@ -15,8 +15,21 @@ exports.createSong = (req, res) => {
     return res.status(400).send({ error: true });
   }
 
-
   const song = songService.createSong(persistSongDTO);
 
   return res.status(201).send({ message: "Created new song", data: song });
 };
+
+exports.getSongById = (req, res) => {
+  const id = req.params.id;
+
+  const song = songService.getSongById(id);
+
+
+  if (!song) {
+    return res.status(404).send({ message: "Song not found" });
+  }
+
+  return res.status(200).send({ message: "Success", data: song });
+
+}
