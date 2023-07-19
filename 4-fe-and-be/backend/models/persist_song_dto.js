@@ -7,6 +7,13 @@ class PersistSongDTO {
         this.playedCount = data.playedCount;
     }
 
+    validate() {
+        if (this.validateTitle() && this.validateArtist() && this.validateImageUrl && this.validateSongUrl())
+            return true;
+        else
+            return false;
+    }
+
     validateTitle() {
         if (this.title == null || this.title == "") return false;
         return true;

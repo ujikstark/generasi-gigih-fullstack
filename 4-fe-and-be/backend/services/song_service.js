@@ -17,15 +17,12 @@ class SongService {
     return this.songModel.getSongById(id);
   }
 
-  updateSong(id, currentSong, newSong) {
+  updateSong(id, song) {
+    return this.songModel.updateSong(id, song);
+  }
 
-    currentSong.setTitle(newSong.validateTitle() ? newSong.getTitle() : currentSong.getTitle());
-    currentSong.setArtist(newSong.validateArtist() ? newSong.getArtist() : currentSong.getArtist());
-    currentSong.setPlayedCount(newSong.validatePlayedCount() ? newSong.getPlayedCount() : currentSong.getPlayedCount());
-    currentSong.setImageUrl(newSong.validateImageUrl() ? newSong.getImageUrl() : currentSong.getImageUrl());
-    currentSong.setSongUrl(newSong.validateSongUrl() ? newSong.getSongUrl() : currentSong.getSongUrl());
-
-    return this.songModel.updateSong(id, currentSong);
+  sortedSongs() {
+    return this.songModel.sortedSongs();
   }
 }
 

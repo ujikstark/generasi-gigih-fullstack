@@ -67,6 +67,7 @@ class SongModel {
     this.loadData();
   }
 
+  // retrieve data from json and make a list<song>
   loadData() {
     try {
       const jsonData = fs.readFileSync(dataPath);
@@ -88,18 +89,31 @@ class SongModel {
     }
   }
 
+  // save data to dummy data json
   saveData() {
     try {
-      fs.writeFileSync(dataPath, JSON.stringify({songs: this.songs}, null, 2));
+      fs.writeFileSync(dataPath, JSON.stringify({ songs: this.songs }, null, 2));
     } catch (error) {
       console.error('Error saving data:', error);
     }
   }
 
+  // retrieve all songs
   getSongs() {
     return this.songs;
   }
 
+  // sorted songs by most played count
+  sortedSongs() {
+    const songs = this.songs.sort((function (a, b) {
+      return b.playedCount - a.playedCount;
+    }));
+
+    return songs;
+
+  }
+
+  // create a new song
   createSong(newSong) {
     const song = new Song();
     song.setTitle(newSong.title);
