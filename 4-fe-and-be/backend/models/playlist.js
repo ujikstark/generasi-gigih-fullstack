@@ -92,6 +92,24 @@ class PlaylistModel {
 
         return playlist;
     }
+
+    getPlaylistIndex(id) {
+        const playlistIndex = this.playlists.findIndex((playlist) => {
+          return playlist.id === id;
+        });
+    
+        return playlistIndex;
+      }
+    
+      updatePlaylist(id, newPlaylist) {
+        const playlistIndex = this.getPlaylistIndex(id);
+        if (playlistIndex == -1) throw new Error('Invalid id');
+    
+        this.playlists[playlistIndex] = newPlaylist;
+        this.saveData();
+    
+        return newPlaylist;
+      }
 }
 
 module.exports = PlaylistModel;
