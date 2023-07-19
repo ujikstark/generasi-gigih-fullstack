@@ -11,31 +11,31 @@ class PersistSongDTO {
         if (this.validateTitle() && this.validateArtist() && this.validateImageUrl && this.validateSongUrl())
             return true;
         else
-            return false;
+            throw new Error("Invalid request data")
     }
 
     validateTitle() {
-        if (this.title == null || this.title == "") return false;
+        if (this.title == null || this.title == "") throw new Error("title is invalid");
         return true;
     }
 
     validateArtist() {
-        if (this.artist == null || this.artist == "") return false;
+        if (this.artist == null || this.artist == "") throw new Error("artist is invalid");
         return true;
     }
 
     validateImageUrl() {
-        if (this.imageUrl == null || this.imageUrl == "") return false;
+        if (this.imageUrl == null || this.imageUrl == "") throw new Error("imageUrl is invalid");
         return true;
     }
 
     validateSongUrl() {
-        if (this.songUrl == null || this.songUrl == "") return false;
+        if (this.songUrl == null || this.songUrl == "") throw new Error("songUrl is invalid");
         return true;
     }
 
     validatePlayedCount() {
-        if (this.playedCount == null || Number.isInteger(this.playedCount) == false) return false;
+        if (this.playedCount == null || Number.isInteger(this.playedCount) == false) throw new Error("playedCount is invalid");
         return true;
     }
 
