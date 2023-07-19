@@ -23,6 +23,7 @@ app.get('/playlists', playlistController.getPlaylists);
 app.post('/playlists', playlistController.createPlaylist);
 app.get('/playlists/:id', playlistController.getPlaylistById);
 app.put('/playlists/:id', playlistController.updatePlaylist);
+app.put('/playlists/:id/add-song', playlistController.addSong);
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)

@@ -21,6 +21,10 @@ class PlaylistService {
     return this.playlistModel.updatePlaylist(id, playlist);
   }
 
+  addSong(playlistId, songId) {
+    return this.playlistModel.addSong(playlistId, songId);
+  }
+
 }
 
 module.exports = PlaylistService;

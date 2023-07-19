@@ -95,21 +95,36 @@ class PlaylistModel {
 
     getPlaylistIndex(id) {
         const playlistIndex = this.playlists.findIndex((playlist) => {
-          return playlist.id === id;
+            return playlist.id === id;
         });
-    
+
         return playlistIndex;
-      }
-    
-      updatePlaylist(id, newPlaylist) {
+    }
+
+    updatePlaylist(id, newPlaylist) {
         const playlistIndex = this.getPlaylistIndex(id);
         if (playlistIndex == -1) throw new Error('Invalid id');
-    
+
         this.playlists[playlistIndex] = newPlaylist;
         this.saveData();
-    
+
         return newPlaylist;
-      }
+    }
+
+    // add song to playlist 
+    addSong(playlistId, songId) {
+        const playlistIndex = this.getPlaylistIndex(playlistId);
+
+        // check if song id is exist in playlist
+        if (this.playlists[playlistIndex].songs.find(song => song.id === songId)) {
+            throw new Error('song id exist!');
+        }
+
+        this.playlists[playlistIndex].songs.push({ id: songId });
+        this.saveData();
+        return this.playlists[playlistIndex];
+    }
+
 }
 
 module.exports = PlaylistModel;
