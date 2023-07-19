@@ -9,11 +9,27 @@ const port = 3000;
 
 app.use(cors());
 
+
+const SongModel = require('./models/song');
+const PersistSongDTO = require('./models/persist_song_dto');
+
 app.get('/songs', (req, res) => {
 
-    const songs = getSongs();
+    const songs = new SongModel();
 
-    res.status(200).send({ message: "Success", data: songs });
+
+    res.status(200).send({ message: "Success", data: songs.getSongs() });
+});
+
+app.post('/songs', express.json(), async (req, res) => {
+    const persistSongDTO = new PersistSongDTO(req.body);
+
+    if (persistSongDTO.validate()) {
+        res.status(200).send({data: persistSongDTO});
+    } else {
+        res.status(401).send({error: "true"});
+    }
+    
 });
 
 app.get('/songs/:id', (req, res) => {

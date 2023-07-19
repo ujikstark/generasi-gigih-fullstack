@@ -1,0 +1,36 @@
+{
+  "songs": [
+    {
+      "id": "60e623f2-7d19-4b18-89bf-a4bdd6cc8432",
+      "playedCount": 0,
+      "title": "Monokrom",
+      "artist": "Mahalini",
+      "songUrl": "music/sial-mahalini.mp3",
+      "imageUrl": "img/sial-mahalini.jpeg"
+    },
+    {
+      "id": "55b16be6-a347-4ad9-8c12-6bd3ae718f60",
+      "playedCount": 21,
+      "title": "Sial",
+      "artist": "Mahalini",
+      "songUrl": "music/sial-mahalini.mp3",
+      "imageUrl": "img/sial-mahalini.jpeg"
+    },
+    {
+      "id": "dade2017-f657-4d01-80cc-55f2b871872b",
+      "playedCount": 0,
+      "title": "Sial aja",
+      "artist": "Mahalini",
+      "songUrl": "music/sial-mahalini.mp3",
+      "imageUrl": "img/sial-mahalini.jpeg"
+    },
+    {
+      "id": "d2e5f14c-9a95-47c4-b58d-2c01ae695fb7",
+      "playedCount": 21,
+      "title": "Sial banget",
+      "artist": "Mahalini",
+      "songUrl": "music/sial-mahalini.mp3",
+      "imageUrl": "img/sial-mahalini.jpeg"
+    }
+  ]
+}
